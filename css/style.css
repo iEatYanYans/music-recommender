@@ -15,7 +15,7 @@
   .sidebar-fixed .logo-wrapper {
     padding: 2.5rem; }
     .sidebar-fixed .logo-wrapper img {
-      max-height: 50px; }
+      max-height: 300px; }
 
 @media (min-width: 1200px) {
   .navbar,
