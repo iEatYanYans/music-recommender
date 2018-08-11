@@ -100,7 +100,7 @@
 
                     <div class="card-body">
 
-                        <h6><b>Playlist Generation</b></h6>
+                        <h6><a name="generate"><b>Playlist Generation</b></a></h6>
                         <p>
                             To generate a playlist, our model can take a track name as input or "seed" and a desired playlist length. The model then finds the row that corresponds to the seed track in the singXsong matrix, normalizes the row so it can be treated as a probability distribution, and samples tracks to be added to the playlist based on this distribution. More similar songs have a much higher chance of being picked. The model output is a list of songs: our new playlist!
                         </p>
@@ -137,6 +137,9 @@
                         <ul>
                             <li>
                                 <a href="#model">The Model</a>
+                            </li>
+                            <li>
+                                <a href="#generate">Playlist Generation</a>
                             </li>
                         </ul>
                     </div>
