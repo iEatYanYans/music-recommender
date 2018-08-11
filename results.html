@@ -104,14 +104,6 @@
                     <!--Card content-->
                     <div class="card-body">
 
-                        <h4><a name="forward"><b>Going Forward</b></a></h4>
-                        <p>
-                            As our EDA has shown, a small percentage of songs represent the majority of all playlist content. This could lead out model to erroneously infer that certain songs are ‘similar to most other songs’ when in reality it is just its overall popularity that causes it to appear in so many playlists, regardless of the other songs already in said playlist. One method to control for this would be to alter our co-occurrence matrix so that each index includes not the co-occurrence count but what is known as a ‘jaccard index’. The Jaccard Index can be seen as a better representation of similarity than simple co-occurrence counts. It can be derived from the COM by dividing the value at index ij (the co-occurrence or ‘intersection’ of tracks i and j) by the ‘union’ of tracks i and j, that is, the sum of the total occurrences in the dataset of both tracks i and j. This intersection over union idea also lies behind tf-idf (text frequency, inverse document frequency) representations in natural language processing.
-                        </p>
-                        <p>
-                            Our model currently calculates the union via lookups in a counter dictionary and divides the co-occurrence counts by it on the fly as it generates each playlist. This slows down playlist generation and it would probably be best to derive an entire Jaccard matrix from the COM from the outset, but this has proved painfully slow. There must be a better way!
-                        </p>
-
                     </div>
 
                 </div>
