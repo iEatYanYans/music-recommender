@@ -26,3 +26,17 @@
 @media (max-width: 1199.98px) {
   .sidebar-fixed {
     display: none; } }
+
+.bio-content {
+  width: 400px;
+  float:left;
+  height: 200px;
+  margin:10px;
+}
+
+.pic {
+  width: 150px;
+  float:left;
+  height: 200px;
+  margin:10px;
+}

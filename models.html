@@ -60,6 +60,7 @@
             <div class="card-body d-sm-flex justify-content-between">
                 <h4 class="mb-2 mb-sm-0 pt-1">
                     <b>Models</b>
+
                 </h4>
             </div>
 
@@ -78,11 +79,28 @@
                     <!--Card content-->
                     <div class="card-body">
 
-                        <canvas id="myChart"></canvas>
+                        <h6><b>The Model (playlist_generator_model1.ipynb)</b></h6>
+                        <p>
+                            The guiding principle of our model is that of ‘collaborative filtering’. Rather than trying to learn what would make a good playlist by inspecting various features of individual tracks we instead turn to the previous decisions of the user community, looking at existing playlists themselves and, for the moment, we disregard any intrinsic track features or track and playlist metadata. For us, a track’s identity just is what playlists it occurs in. Likewise, a playlist’s identity is nothing more than the tracks it contains.
+                        </p>
+                        <p>
+                            We assume that tracks belong in playlists together if they are sufficiently similar. And we cash out our notion of ‘similarity’ entirely in terms of co-occurrence. That is, two tracks are considered similar if they frequently appear together in playlists. Likewise, two tracks which never co-occur are are assumed to be dissimilar and so should probably not be put in a playlist together. Again, the principle is that the user community knows what it’s doing when it makes playlists. Our model will simpy and mimic that behavior.
+                        </p>
+                        <p>
+                            Once we start thinking of a playlist as simply a list of tracks, it can be represented even more abstractly as a m-dimensional row vector of one-hot predictors where m is the total number of unique tracks in our dataset and each predictor corresponds to one track in our dataset. The value of a playlist vector P at index i will be 1 if P contains track i  and 0 otherwise. We can then stack these playlist row vectors on top of one another to create an nXm matrix where n is the number of playlists and m the number of unique songs. Now, if we take the transpose of this matrix and multiple it with the original we get an mXm matrix, that is, our track co-occurrence matrix. This is the method tested in playlist_generator_model2.ipynb. We used an iterative approach to construct the co-occurrence matrix (COM) in playlist_generator_model1.ipynb.
+                        </p>
+                        <p>
+                            To generate a playlist, our model can take a track name as input or ‘seed’ and a desired playlist length. The model then finds the row that corresponds to the seed track in the COM, normalizes the row so it can be treated as a probability distribution, and samples tracks to be added to the playlist based on this distribution. More similar songs have a much higher chance of being picked. The model output is a list of songs: our new playlist!
+                        </p>
+                        <p>
+                            The input to the model can also be a list of songs. Here the COM rows corresponding to  each song in the seed list are summed, and then treated as before. If there not enough similar songs in a COM row to complete a playlist, the picks found so far are summed in this fashion and used as the new seed. This prevents ‘dead ends’ from occurring when seeding with rare songs. Steps have also been taken to prevent songs from appearing more than once in a playlist.
+                        </p>
 
                     </div>
 
                 </div>
+
+
                 <!--/.Card-->
 
             </div>

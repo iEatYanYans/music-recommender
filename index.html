@@ -153,7 +153,22 @@
                         <!--Card content-->
                         <div class="card-body">
 
-                            <canvas id="myChart"></canvas>
+                            <!--<canvas id="myChart"></canvas>-->
+                            <p>
+                                Spotify is a popular music streaming service that give users the freedom to listen to music with only the download of an application. Spotify has over 70 million paying subscribers worldwide. This number does not include non-paying users which is estimated to be significantly more.
+                            </p>
+                            <p>
+                                Gone are the days of walkmans and cds with their limited range of songs per item. The internet allows people around the world to share music with each other without needing to actually download the song. This also opened a window of opportunity for music streaming services including Spotify to bring in features that keep users engaged and using their software for a longer period of time. Spotify has playlists that users can ‘follow’ as well as the ability to integrate with popular social media sites such as facebook to share playlists with friends. Another one of these services from Spotify is their music recommendation system. A music recommender software is an application that takes in either a set of songs or one song and use algorithms to determine a similar or related song that the user will enjoy. Because this software directly interacts with Spotify’s customer base and is an integral component of the user’s Spotify experience, it is imperative that the algorithm is able to recommend great music to the user.
+                            </p>
+                            <p>
+                                The objective of this project is to design and build an effective music recommender system that utilizes data collected from the Spotify API as well as data from the Million Playlist Dataset (MPD). From the Spotify API, audio features from each track such as the duration of each song, key, tempo, valence, acoustic-ness, danceability, energy, instrumentalness, liveness, loudness, and speechiness will be useful to this project. Spotify’s featured playlists will also provide an insight to what Spotify thinks consumers will like which could be useful for refinement. From the Million Playlist Dataset, information such as popular playlist naming conventions, popularity and diversity of artists in a playlist, and playlist composition will help answer questions regarding what to put into a playlist that will be enjoyable to the listener.
+                            </p>
+                            <p>
+                                In order to successfully execute this project, there are some challenges we anticipate that may need to be addressed as we progress. One of the main challenges is to overcome is the magnitude of the Million Playlist Dataset itself. This is a particular problem as our base model relies on a co-occurrence matrix derived from the data set. Can we perhaps represent it in a more condensed form? Can our model perform well enough using only a subset of the data, or should we instead turn to a different model architecture that is trained iteratively on small batches of observations, eliminating the need of representing it all in memory. We will also need to explore our options for model evaluation. That is, how do we know if our generator is doing a good job? Domain knowledge can provide an initial ‘sanity check’ for model output, but ultimately we’d like an actual metric. As noted in Berenzweig et al. (2003), establishing what should constitute the ground-truth against which our model’s selection are to be compared is a challenge in itself. Possible areas to investigate in this respect are precision & recall metrics, learning to rank, and the use of user generated data as ground-truth (e.g., playlist co-occurrence, similar artist tags, user ratings, etc.).
+                            </p>
+                            <p>
+                                The problem of evaluation is related to the memory problem associated with the enormous co-occurrence matrix. Even if we alter our model to an iterative architecture, say a neural network that takes a track’s Spotify audio features as input, we still need to evaluate the output  to train the model. If we use the co-occurrence matrix for evaluation then we haven’t really avoided the problem as it will still need to be represented in memory!
+                            </p>
 
                         </div>
 
