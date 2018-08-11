@@ -95,6 +95,11 @@
                         <p>
                             We used SKLearn's TfidfVectorizer to create a the playlistXsong matrix. We simply represented each playlist as a single string, a document in which each word is a track id. Then the list of all our playlists can be passed to the vectorizer like any other text corpus. The vectorizer also makes use of SciPy's sparse matrix representation, conserving a lot of memory, allowing for faster matrix operations (such as the one required to derive the singXsong matrix), and so permitting us to incorporate many more datafilee into the building of our model thane could in past iterations.
                         </p>
+
+                    </div>
+
+                    <div class="card-body">
+
                         <h6><b>Playlist Generation</b></h6>
                         <p>
                             To generate a playlist, our model can take a track name as input or "seed" and a desired playlist length. The model then finds the row that corresponds to the seed track in the singXsong matrix, normalizes the row so it can be treated as a probability distribution, and samples tracks to be added to the playlist based on this distribution. More similar songs have a much higher chance of being picked. The model output is a list of songs: our new playlist!
