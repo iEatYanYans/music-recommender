@@ -31,7 +31,7 @@
                 <a href="index.html" class="list-group-item active waves-effect">
                     <i class="fa fa-file-text mr-3"></i>Project Statement</a>
                 <a href="intro-eda.html" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fa fa-table mr-3"></i>Introduction / EDA</a>
+                    <i class="fa fa-table mr-3"></i>Exploratory Data Analysis</a>
                 <a href="models.html" class="list-group-item list-group-item-action waves-effect">
                     <i class="fa fa-pie-chart mr-3"></i>Models</a>
                 <a href="results.html" class="list-group-item list-group-item-action waves-effect">
@@ -79,7 +79,7 @@
                         <div class="card-body">
 
                             <!--<canvas id="myChart"></canvas>-->
-                            <h6><a name="intro"><b>Introduction</b></a></h6>
+                            <h4><a name="intro"><b>Introduction</b></a></h4>
                             <p>
                                 Spotify is a popular music streaming service that give users the freedom to listen to music with only the download of an application. Spotify has over 70 million paying subscribers worldwide. This number does not include non-paying users which is estimated to be significantly more.
                             </p>
@@ -90,11 +90,11 @@
                             <iframe src="https://open.spotify.com/embed/user/the_junes/playlist/4GdYwBztsKQ3J3T4FjkQ0d" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
                             <br>
                             <br>
-                            <h6><a name="objective"><b>Objective</b></a></h6>
+                            <h4><a name="objective"><b>Objective</b></a></h4>
                             <p>
                                 The objective of this project is to design and build an effective music recommender system that utilizes data collected from the Spotify API as well as data from the Million Playlist Dataset (MPD). From the Spotify API, audio features from each track such as the duration of each song, key, tempo, valence, acoustic-ness, danceability, energy, instrumentalness, liveness, loudness, and speechiness will be useful to this project. Spotify’s featured playlists will also provide an insight to what Spotify thinks consumers will like which could be useful for refinement. From the Million Playlist Dataset, information such as popular playlist naming conventions, popularity and diversity of artists in a playlist, and playlist composition will help answer questions regarding what to put into a playlist that will be enjoyable to the listener.
                             </p>
-                            <h6><a name="challenges"><b>Challenges</b></a></h6>
+                            <h4><a name="challenges"><b>Challenges</b></a></h4>
                             <p>
                                 In order to successfully execute this project, there are some challenges we anticipate that may need to be addressed as we progress. One of the main challenges is to overcome is the magnitude of the Million Playlist Dataset itself. This is a particular problem as our base model relies on a co-occurrence matrix derived from the data set. Can we perhaps represent it in a more condensed form? Can our model perform well enough using only a subset of the data, or should we instead turn to a different model architecture that is trained iteratively on small batches of observations, eliminating the need of representing it all in memory. We will also need to explore our options for model evaluation. That is, how do we know if our generator is doing a good job? Domain knowledge can provide an initial ‘sanity check’ for model output, but ultimately we’d like an actual metric. As noted in Berenzweig et al. (2003), establishing what should constitute the ground-truth against which our model’s selection are to be compared is a challenge in itself. Possible areas to investigate in this respect are precision & recall metrics, learning to rank, and the use of user generated data as ground-truth (e.g., playlist co-occurrence, similar artist tags, user ratings, etc.).
                             </p>

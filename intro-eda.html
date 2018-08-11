@@ -32,7 +32,7 @@
             <a href="index.html" class="list-group-item list-group-item-action waves-effect">
                 <i class="fa fa-file-text mr-3"></i>Project Statement</a>
             <a href="intro-eda.html" class="list-group-item active waves-effect">
-                <i class="fa fa-table mr-3"></i>Introduction / EDA</a>
+                <i class="fa fa-table mr-3"></i>Exploratory Data Analysis</a>
             <a href="models.html" class="list-group-item list-group-item-action waves-effect">
                 <i class="fa fa-pie-chart mr-3"></i>Models</a>
             <a href="results.html" class="list-group-item list-group-item-action waves-effect">
@@ -77,7 +77,7 @@
 
                     <!--Card content-->
                     <div class="card-body">
-                        <h6><b>Million Playlist Dataset EDA (MPD_EDA.ipynb)</b></h6>
+                        <h4><a name="mpd"><b>Million Playlist Dataset EDA (MPD_EDA.ipynb)</b></a></h4>
 
                         <p>
                             For our base model we are primarily focused on the Million Playlist Dataset (MPD). Each observation corresponds to a single Spotify playlist, with various fields representing its different properties. Our first task was to determine which of these features would actually be useful for our playlist generator.
@@ -125,150 +125,6 @@
                 <!--/.Card-->
 
             </div>
-
-            <!--Card-->
-            <div class="card">
-                <!--Card content-->
-                <div class="card-body">
-                    <h6><b>Spotify API EDA</b></h6>
-                    <p>
-                        In order to get a better idea of the composition of the playlists featured on Spotify, we pulled the tracks of top 50 playlists featured by Spotify to see if we can detect a trend of what Spotify thinks its listeners want. We then extract the audio features of each track to be able to better categorize the songs.
-                    </p>
-                    <table style="width:100%">
-                        <tr>
-                            <th>KEY</th>
-                            <th>VALUE TYPE</th>
-                            <th>VALUE DESCRIPTION</th>
-                        </tr>
-                        <tr>
-                            <td>acousticness</td>
-                            <td>float</td>
-                            <td>A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.</td>
-                        </tr>
-                        <tr>
-                            <td>danceability</td>
-                            <td>float</td>
-                            <td>How suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</td>
-                        </tr>
-                        <tr>
-                            <td>duration_ms</td>
-                            <td>int</td>
-                            <td>The duration of the track in milliseconds.</td>
-                        </tr>
-                        <tr>
-                            <td>energy</td>
-                            <td>float</td>
-                            <td>Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>instrumentalness</td>
-                            <td>float</td>
-                            <td>Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>key</td>
-                            <td>int</td>
-                            <td>The key the track is in. Integers map to pitches using standard Pitch Class notation . E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on.</td>
-                        </tr>
-                        <tr>
-                            <td>liveness</td>
-                            <td>float</td>
-                            <td>Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.</td>
-                        </tr>
-                        <tr>
-                            <td>loudness</td>
-                            <td>float</td>
-                            <td>The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db.</td>
-                        </tr>
-                        <tr>
-                            <td>mode</td>
-                            <td>int</td>
-                            <td>Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.</td>
-                        </tr>
-                        <tr>
-                            <td>speechiness</td>
-                            <td>float</td>
-                            <td>Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>tempo</td>
-                            <td>float</td>
-                            <td>The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>time_signature</td>
-                            <td>int</td>
-                            <td>An estimated overall time signature of a track. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure).
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>valence</td>
-                            <td>float</td>
-                            <td>A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
-                            </td>
-                        </tr>
-                    </table>
-                    <p>
-                        Source: Spotify API Documentation
-                    </p>
-                    <br>
-                    <p>
-                        The 825 observations were then pulled into scatter plots separated by audio feature.
-                    </p>
-                    <img src="img/graphs/spotify-dancebility.png" alt="Top 40 Words Used in Playlist names"
-                         class="img-fluid">
-                    <p>
-                        In this plot of danceability, we observe a trend of groupings of danceability with the average danceability being a little more than 5. It is likely that the groupings are from separate playlists that are either below average in danceability or playlists that are above average in danceability. The smooth transitions from low danceability to high danceability in this suggest that adjacent featured playlists in Spotify may be purposely placed near similar neighbors for a more enjoyable experience for users.
-                    </p>
-                    <img src="img/graphs/spotify-energy.png" alt="Top 40 Words Used in Playlist names"
-                         class="img-fluid">
-                    <p>
-                        Looking at the graph of the energy of each track vs the danceability of each track, we observed a similar pattern between the two graphs. According to the documentation, danceability and energy are not seemingly directed related but still seem to share an indirect relationship. Both somewhat alternate between low energy/danceability and high energy/danceability.
-                    </p>
-                    <img src="img/graphs/spotify-speechiness.png" alt="Top 40 Words Used in Playlist names"
-                         class="img-fluid">
-                    <p>
-                        Here, we observe that the mean of speechiness in the tracks were quite low (around .09). According to the documentation, a speechiness from .33-.66 most likely indicates that it is music accompanied with speech (singing is not considered speech). This indicates that a majority of the music had little to no speech in it with a majority of speechy music located together in an area. This could be reinforcing the idea that Spotify likes to have variety in their featured playlists and tend to group similar playlists today and transition between each one. Further research and more data would be needed to prove or disprove this idea.
-                    </p>
-                    <img src="img/graphs/spotify-liveness.png" alt="Top 40 Words Used in Playlist names"
-                         class="img-fluid">
-                    <p>
-                        Liveness is a measure of how loud the background noise is which is indicative of whether the tracks are recorded in a studio or performed live. The trend of this graph is extremely to the trend of the speechiness of each track. Through this, we can make better assumptions about each track. Previously, we thought that the cluster of tracks in the middle were measured high in speechiness due to being rap or another genre of talkative music. Here, we can see that some of those tracks could possibly be recorded live where there is an audience. This cross-section seem to be similar to the areas on the danceability graph where the danceability of the songs are higher.
-                    </p>
-                    <img src="img/graphs/spotify-feature-heatmap.png" alt="Top 40 Words Used in Playlist names"
-                         class="img-fluid">
-                    <p>
-                        Here, we have a visualization of the correlation matrix between each predictor that may assist in determining co-linear predictors. According to the matrix, there are a few highly negatively correlated predictors such as acousticness and energy, instrumentalness and loudness, acousticness and loudness. Predictors that are co-linear include valence and danceability, energy and danceability, energy, and valence, and acousticness and instrumentalness, as well as danceability and speechiness.
-                    </p>
-                </div>
-            </div>
-
-            <!--Card-->
-            <div class="card">
-                <!--Card content-->
-                <div class="card-body">
-                    <h6><b>Data Cleaning</b></h6>
-                    <p>
-                        By far the most important data for our base model are the tracks that actually constitute a given playlist. And as we’ll see, a great deal of the information the MPD provides for a playlist (e.g., num_albums, num_artists) can be pulled from the Spotify API with only the track IDs, other data (i.e., num_tracks) can simply derived from our list of tracks itself. So, for the moment, we discard everything but the ‘tracks’ field from each playlist. The tracks field is a list of dictionaries:
-                    </p>
-                    <img src="img/graphs/data-cleaning.png" alt="Top 40 Words Used in Playlist names"
-                         class="img-fluid">
-                    <p>
-                        We will make the simplifying assumption that track order is not important, treating each playlist as an unordered list of tracks. We can then discard the ‘pos’ data. All other data in the dictionary could be retrieved, should we desire it, through the Spotify API with just the track_uri (i.e., track ID). A playlist for our purposes can be simplified to a list of track_ids. And so we can boil down the entire MPD to a list of lists of track ids.
-                    </p>
-                    <p>
-                        For our first model we will actually use a string concatenation of artist name and track name as a stand-in for track ID. This will make working with the model much easier. We can simply give it input in the form of such strings (generated by the user on a whim) and get back playlists in the form of these easily interpretable strings. If we were dealing with IDs we’d have to be converting back and forth in so that we mere humans could make any sense of them.
-                    </p>
-                    
-                </div>
-            </div>
-
-            <!--Grid column-->
-
             <!--Grid column-->
             <div class="col-md-3 mb-4">
 
@@ -277,1059 +133,181 @@
 
                     <!-- Card header -->
                     <div class="card-header text-center">
-                        Pie chart
+                        Navigation
                     </div>
 
                     <!--Card content-->
                     <div class="card-body">
-
-                        <canvas id="pieChart"></canvas>
+                        <ul>
+                            <li>
+                                <a href="#mpd">Million Playlist Dataset EDA</a>
+                            </li>
+                            <li>
+                                <a href="#spotify">Spotify API EDA</a>
+                            </li>
+                            <li>
+                                <a href="#data-cleaning">Data Cleaning</a>
+                            </li>
+                        </ul>
 
                     </div>
 
                 </div>
                 <!--/.Card-->
-
-                <!--Card-->
-                <div class="card mb-4">
-
-                    <!--Card content-->
-                    <div class="card-body">
-
-                        <!-- List group links -->
-                        <div class="list-group list-group-flush">
-                            <a class="list-group-item list-group-item-action waves-effect">Sales
-                                <span class="badge badge-success badge-pill pull-right">22%
-                                        <i class="fa fa-arrow-up ml-1"></i>
-                                    </span>
-                            </a>
-                            <a class="list-group-item list-group-item-action waves-effect">Traffic
-                                <span class="badge badge-danger badge-pill pull-right">5%
-                                        <i class="fa fa-arrow-down ml-1"></i>
-                                    </span>
-                            </a>
-                            <a class="list-group-item list-group-item-action waves-effect">Orders
-                                <span class="badge badge-primary badge-pill pull-right">14</span>
-                            </a>
-                            <a class="list-group-item list-group-item-action waves-effect">Issues
-                                <span class="badge badge-primary badge-pill pull-right">123</span>
-                            </a>
-                            <a class="list-group-item list-group-item-action waves-effect">Messages
-                                <span class="badge badge-primary badge-pill pull-right">8</span>
-                            </a>
-                        </div>
-                        <!-- List group links -->
-
-                    </div>
-
-                </div>
-                <!--/.Card-->
-
             </div>
-            <!--Grid column-->
 
-        </div>
-        <!--Grid row-->
-
-        <!--Grid row-->
-        <div class="row wow fadeIn">
-
-            <!--Grid column-->
-            <div class="col-md-6 mb-4">
-
-                <!--Card-->
+            <!--Card-->
+            <div class="col-md-9 mb-4">
                 <div class="card">
-
                     <!--Card content-->
                     <div class="card-body">
-
-                        <!-- Table  -->
-                        <table class="table table-hover">
-                            <!-- Table head -->
-                            <thead class="blue-grey lighten-4">
-                            <tr>
-                                <th>#</th>
-                                <th>Lorem</th>
-                                <th>Ipsum</th>
-                                <th>Dolor</th>
-                            </tr>
-                            </thead>
-                            <!-- Table head -->
-
-                            <!-- Table body -->
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Cell 1</td>
-                                <td>Cell 2</td>
-                                <td>Cell 3</td>
+                        <h4><a name="spotify"><b>Spotify API EDA</b></a></h4>
+                        <p>
+                            In order to get a better idea of the composition of the playlists featured on Spotify, we pulled the tracks of top 50 playlists featured by Spotify to see if we can detect a trend of what Spotify thinks its listeners want. We then extract the audio features of each track to be able to better categorize the songs.
+                        </p>
+                        <table id="spotify-features-tbl" style="border: 1px solid #ddd; padding: 8px; height: 1500px; width:90%">
+                            <tr style="padding-top: 12px; padding-bottom: 12px; text-align: center; background-color: #007bff;color: white;">
+                                <th>KEY</th>
+                                <th>VALUE TYPE</th>
+                                <th>VALUE DESCRIPTION</th>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
-                                <td>Cell 4</td>
-                                <td>Cell 5</td>
-                                <td>Cell 6</td>
+                                <td>acousticness</td>
+                                <td>float</td>
+                                <td>A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.</td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
-                                <td>Cell 7</td>
-                                <td>Cell 8</td>
-                                <td>Cell 9</td>
+                                <td>danceability</td>
+                                <td>float</td>
+                                <td>How suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</td>
                             </tr>
-                            </tbody>
-                            <!-- Table body -->
+                            <tr>
+                                <td>duration_ms</td>
+                                <td>int</td>
+                                <td>The duration of the track in milliseconds.</td>
+                            </tr>
+                            <tr>
+                                <td>energy</td>
+                                <td>float</td>
+                                <td>Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>instrumentalness</td>
+                                <td>float</td>
+                                <td>Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>key</td>
+                                <td>int</td>
+                                <td>The key the track is in. Integers map to pitches using standard Pitch Class notation . E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on.</td>
+                            </tr>
+                            <tr>
+                                <td>liveness</td>
+                                <td>float</td>
+                                <td>Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.</td>
+                            </tr>
+                            <tr>
+                                <td>loudness</td>
+                                <td>float</td>
+                                <td>The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db.</td>
+                            </tr>
+                            <tr>
+                                <td>mode</td>
+                                <td>int</td>
+                                <td>Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.</td>
+                            </tr>
+                            <tr>
+                                <td>speechiness</td>
+                                <td>float</td>
+                                <td>Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>tempo</td>
+                                <td>float</td>
+                                <td>The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>time_signature</td>
+                                <td>int</td>
+                                <td>An estimated overall time signature of a track. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure).
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>valence</td>
+                                <td>float</td>
+                                <td>A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
+                                </td>
+                            </tr>
                         </table>
-                        <!-- Table  -->
-
+                        <p>
+                            Source: Spotify API Documentation
+                        </p>
+                        <br>
+                        <p>
+                            The 825 observations were then pulled into scatter plots separated by audio feature.
+                        </p>
+                        <img src="img/graphs/spotify-dancebility.png" alt="Top 40 Words Used in Playlist names"
+                             class="img-fluid">
+                        <p>
+                            In this plot of danceability, we observe a trend of groupings of danceability with the average danceability being a little more than 5. It is likely that the groupings are from separate playlists that are either below average in danceability or playlists that are above average in danceability. The smooth transitions from low danceability to high danceability in this suggest that adjacent featured playlists in Spotify may be purposely placed near similar neighbors for a more enjoyable experience for users.
+                        </p>
+                        <img src="img/graphs/spotify-energy.png" alt="Top 40 Words Used in Playlist names"
+                             class="img-fluid">
+                        <p>
+                            Looking at the graph of the energy of each track vs the danceability of each track, we observed a similar pattern between the two graphs. According to the documentation, danceability and energy are not seemingly directed related but still seem to share an indirect relationship. Both somewhat alternate between low energy/danceability and high energy/danceability.
+                        </p>
+                        <img src="img/graphs/spotify-speechiness.png" alt="Top 40 Words Used in Playlist names"
+                             class="img-fluid">
+                        <p>
+                            Here, we observe that the mean of speechiness in the tracks were quite low (around .09). According to the documentation, a speechiness from .33-.66 most likely indicates that it is music accompanied with speech (singing is not considered speech). This indicates that a majority of the music had little to no speech in it with a majority of speechy music located together in an area. This could be reinforcing the idea that Spotify likes to have variety in their featured playlists and tend to group similar playlists today and transition between each one. Further research and more data would be needed to prove or disprove this idea.
+                        </p>
+                        <img src="img/graphs/spotify-liveness.png" alt="Top 40 Words Used in Playlist names"
+                             class="img-fluid">
+                        <p>
+                            Liveness is a measure of how loud the background noise is which is indicative of whether the tracks are recorded in a studio or performed live. The trend of this graph is extremely to the trend of the speechiness of each track. Through this, we can make better assumptions about each track. Previously, we thought that the cluster of tracks in the middle were measured high in speechiness due to being rap or another genre of talkative music. Here, we can see that some of those tracks could possibly be recorded live where there is an audience. This cross-section seem to be similar to the areas on the danceability graph where the danceability of the songs are higher.
+                        </p>
+                        <img src="img/graphs/spotify-feature-heatmap.png" alt="Top 40 Words Used in Playlist names"
+                             class="img-fluid">
+                        <p>
+                            Here, we have a visualization of the correlation matrix between each predictor that may assist in determining co-linear predictors. According to the matrix, there are a few highly negatively correlated predictors such as acousticness and energy, instrumentalness and loudness, acousticness and loudness. Predictors that are co-linear include valence and danceability, energy and danceability, energy, and valence, and acousticness and instrumentalness, as well as danceability and speechiness.
+                        </p>
                     </div>
-
                 </div>
-                <!--/.Card-->
-
             </div>
-            <!--Grid column-->
 
-            <!--Grid column-->
-            <div class="col-md-6 mb-4">
-
+            <div class="col-md-9 mb-4">
                 <!--Card-->
                 <div class="card">
-
                     <!--Card content-->
                     <div class="card-body">
-
-                        <!-- Table  -->
-                        <table class="table table-hover">
-                            <!-- Table head -->
-                            <thead class="blue lighten-4">
-                            <tr>
-                                <th>#</th>
-                                <th>Lorem</th>
-                                <th>Ipsum</th>
-                                <th>Dolor</th>
-                            </tr>
-                            </thead>
-                            <!-- Table head -->
-
-                            <!-- Table body -->
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Cell 1</td>
-                                <td>Cell 2</td>
-                                <td>Cell 3</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Cell 4</td>
-                                <td>Cell 5</td>
-                                <td>Cell 6</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Cell 7</td>
-                                <td>Cell 8</td>
-                                <td>Cell 9</td>
-                            </tr>
-                            </tbody>
-                            <!-- Table body -->
-                        </table>
-                        <!-- Table  -->
-
+                        <h4><a name="data-cleaning"><b>Data Cleaning</b></a></h4>
+                        <p>
+                            By far the most important data for our base model are the tracks that actually constitute a given playlist. And as we’ll see, a great deal of the information the MPD provides for a playlist (e.g., num_albums, num_artists) can be pulled from the Spotify API with only the track IDs, other data (i.e., num_tracks) can simply derived from our list of tracks itself. So, for the moment, we discard everything but the ‘tracks’ field from each playlist. The tracks field is a list of dictionaries:
+                        </p>
+                        <img src="img/graphs/data-cleaning.png" alt="Top 40 Words Used in Playlist names"
+                             class="img-fluid">
+                        <p>
+                            We will make the simplifying assumption that track order is not important, treating each playlist as an unordered list of tracks. We can then discard the ‘pos’ data. All other data in the dictionary could be retrieved, should we desire it, through the Spotify API with just the track_uri (i.e., track ID). A playlist for our purposes can be simplified to a list of track_ids. And so we can boil down the entire MPD to a list of lists of track ids.
+                        </p>
+                        <p>
+                            For our first model we will actually use a string concatenation of artist name and track name as a stand-in for track ID. This will make working with the model much easier. We can simply give it input in the form of such strings (generated by the user on a whim) and get back playlists in the form of these easily interpretable strings. If we were dealing with IDs we’d have to be converting back and forth in so that we mere humans could make any sense of them.
+                        </p>
                     </div>
-
                 </div>
-                <!--/.Card-->
-
             </div>
-            <!--Grid column-->
 
+            <!--Grid column-->
         </div>
-        <!--Grid row-->
-
-        <!--Grid row-->
-        <div class="row wow fadeIn">
-
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-12 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                    <!-- Card header -->
-                    <div class="card-header">Line chart</div>
-
-                    <!--Card content-->
-                    <div class="card-body">
-
-                        <canvas id="lineChart"></canvas>
-
-                    </div>
-
-                </div>
-                <!--/.Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                    <!-- Card header -->
-                    <div class="card-header">Radar Chart</div>
-
-                    <!--Card content-->
-                    <div class="card-body">
-
-                        <canvas id="radarChart"></canvas>
-
-                    </div>
-
-                </div>
-                <!--/.Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                    <!-- Card header -->
-                    <div class="card-header">Doughnut Chart</div>
-
-                    <!--Card content-->
-                    <div class="card-body">
-
-                        <canvas id="doughnutChart"></canvas>
-
-                    </div>
-
-                </div>
-                <!--/.Card-->
-
-            </div>
-            <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
-        <!--Grid row-->
-        <div class="row wow fadeIn">
-
-            <!--Grid column-->
-            <div class="col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                    <!-- Card header -->
-                    <div class="card-header">Google map</div>
-
-                    <!--Card content-->
-                    <div class="card-body">
-
-                        <!--Google map-->
-                        <div id="map-container" class="z-depth-1" style="height: 500px"></div>
-
-                    </div>
-
-                </div>
-                <!--/.Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card">
-
-                    <!--Section: Modals-->
-                    <section>
-
-                        <!-- Frame Modal Top Info-->
-                        <div class="modal fade top" id="frameModalTopInfoDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-                             data-backdrop="false">
-                            <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Body-->
-                                    <div class="modal-body">
-                                        <div class="row d-flex justify-content-center align-items-center">
-
-                                            <p class="pt-3 pr-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nisi quo
-                                                provident fugiat reprehenderit nostrum quos..</p>
-
-                                            <a role="button" class="btn btn-info">Get it now
-                                                <i class="fa fa-diamond ml-1"></i>
-                                            </a>
-                                            <a role="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">No, thanks</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Frame Modal Bottom Success-->
-
-                        <!-- Frame Modal Bottom Success-->
-                        <div class="modal fade bottom" id="frameModalBottomSuccessDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                             aria-hidden="true" data-backdrop="false">
-                            <div class="modal-dialog modal-frame modal-bottom modal-notify modal-success" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Body-->
-                                    <div class="modal-body">
-                                        <div class="row d-flex justify-content-center align-items-center">
-
-                                            <p class="pt-3 pr-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nisi quo
-                                                provident fugiat reprehenderit nostrum quos..</p>
-
-                                            <a role="button" class="btn btn-success">Get it now
-                                                <i class="fa fa-diamond ml-1"></i>
-                                            </a>
-                                            <a role="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Frame Modal Bottom Success-->
-
-                        <!-- Side Modal Top Right Success-->
-                        <div class="modal fade right" id="sideModalTRSuccessDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-                             data-backdrop="false">
-                            <div class="modal-dialog modal-side modal-top-right modal-notify modal-success" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <p class="heading lead">Modal Success</p>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true" class="white-text">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-                                        <div class="text-center">
-                                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla
-                                                aperiam blanditiis ad consequatur in dolores culpa, dignissimos, eius
-                                                non possimus fugiat. Esse ratione fuga, enim, ab officiis totam.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <!--Footer-->
-                                    <div class="modal-footer justify-content-center">
-                                        <a role="button" class="btn btn-success">Get it now
-                                            <i class="fa fa-diamond ml-1"></i>
-                                        </a>
-                                        <a role="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Side Modal Top Right Success-->
-
-                        <!-- Side Modal Top Left Info-->
-                        <div class="modal fade left" id="sideModalTLInfoDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-                             data-backdrop="false">
-                            <div class="modal-dialog modal-side modal-top-left modal-notify modal-info" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <p class="heading lead">Modal Info</p>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true" class="white-text">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-
-                                        <img src="https://mdbootstrap.com/wp-content/uploads/2016/11/admin-dashboard-bootstrap.jpg" alt="Material Design for Bootstrap - dashboard"
-                                             class="img-fluid">
-
-                                        <div class="text-center">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt vero illo
-                                                error eveniet cum.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <!--Footer-->
-                                    <div class="modal-footer justify-content-center">
-                                        <a role="button" class="btn btn-info">Get it now
-                                            <i class="fa fa-diamond ml-1"></i>
-                                        </a>
-                                        <a role="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">No, thanks</a>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Side Modal Top Left Info-->
-
-                        <!-- Side Modal Bottom Right Danger-->
-                        <div class="modal fade right" id="sideModalBRDangerDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-                             data-backdrop="false">
-                            <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <p class="heading">Modal Danger</p>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true" class="white-text">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <p></p>
-                                                <p class="text-center">
-                                                    <i class="fa fa-shopping-cart fa-4x"></i>
-                                                </p>
-                                            </div>
-
-                                            <div class="col-9">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, molestiae
-                                                    provident temporibus sunt earum.</p>
-                                                <h2>
-                                                    <span class="badge">v52gs1</span>
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Footer-->
-                                    <div class="modal-footer justify-content-center">
-                                        <a role="button" class="btn btn-danger">Get it now
-                                            <i class="fa fa-diamond ml-1"></i>
-                                        </a>
-                                        <a role="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">No, thanks</a>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Side Modal Bottom Right Danger-->
-
-                        <!-- Side Modal Bottom Left Warning-->
-                        <div class="modal fade left" id="sideModalBLWarningDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-                             data-backdrop="false">
-                            <div class="modal-dialog modal-side modal-bottom-left modal-notify modal-warning" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <p class="heading">Modal Warning</p>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true" class="white-text">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-
-                                        <div class="row">
-                                            <div class="col-3 text-center">
-                                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" alt="Michal Szymanski - founder of Material Design for Bootstrap"
-                                                     class="img-fluid z-depth-1-half rounded-circle">
-                                                <div style="height: 10px"></div>
-                                                <p class="title mb-0">Jane</p>
-                                                <p class="text-muted " style="font-size: 13px">Consultant</p>
-                                            </div>
-
-                                            <div class="col-9">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, molestiae
-                                                    provident temporibus sunt earum.</p>
-                                                <p class="card-text">
-                                                    <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</strong>
-                                                </p>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                    <!--Footer-->
-                                    <div class="modal-footer justify-content-center">
-                                        <a role="button" class="btn btn-warning">Get it now
-                                            <i class="fa fa-diamond ml-1"></i>
-                                        </a>
-                                        <a role="button" class="btn btn-outline-warning waves-effect" data-dismiss="modal">No, thanks</a>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Side Modal Bottom Left Warning-->
-
-                        <!--Modal Form Login with Avatar Demo-->
-                        <div class="modal fade" id="modalLoginAvatarDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" class="rounded-circle img-responsive" alt="Avatar photo">
-                                    </div>
-                                    <!--Body-->
-                                    <div class="modal-body text-center mb-1">
-
-                                        <h5 class="mt-1 mb-2">Maria Doe</h5>
-
-                                        <div class="md-form ml-0 mr-0">
-                                            <input type="password" type="text" id="form1" class="form-control ml-0">
-                                            <label for="form1" class="ml-0">Enter password</label>
-                                        </div>
-
-                                        <div class="text-center mt-4">
-                                            <button class="btn btn-cyan">Login
-                                                <i class="fa fa-sign-in ml-1"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!--Modal Form Login with Avatar Demo-->
-
-                        <!--Modal: Login / Register Form Demo-->
-                        <div class="modal fade" id="modalLRFormDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ...
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Modal: Login / Register Form Demo-->
-
-                        <!-- Central Modal Large Info-->
-                        <div class="modal fade" id="centralModalLGInfoDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-notify modal-info" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <p class="heading lead">Modal Info</p>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true" class="white-text">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-                                        <div class="text-center">
-                                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla
-                                                aperiam blanditiis ad consequatur in dolores culpa, dignissimos, eius
-                                                non possimus fugiat. Esse ratione fuga, enim, ab officiis totam.
-                                            </p>
-                                        </div>
-                                        <img src="https://mdbootstrap.com/wp-content/uploads/2016/11/admin-dashboard-bootstrap.jpg" alt="Material Design for Bootstrap - dashboard"
-                                             class="img-fluid">
-
-                                    </div>
-
-                                    <!--Footer-->
-                                    <div class="modal-footer">
-                                        <a role="button" class="btn btn-info">Get it now
-                                            <i class="fa fa-diamond ml-1"></i>
-                                        </a>
-                                        <a role="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">No, thanks</a>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Central Modal Large Info-->
-
-                        <!-- Central Modal Fluid Success-->
-                        <div class="modal fade" id="centralModalFluidSuccessDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-fluid modal-notify modal-success" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <p class="heading lead">Modal Success</p>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true" class="white-text">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-                                        <div class="text-center">
-                                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla
-                                                aperiam blanditiis ad consequatur in dolores culpa, dignissimos, eius
-                                                non possimus fugiat. Esse ratione fuga, enim, ab officiis totam.
-                                            </p>
-                                        </div>
-                                        <ul class="list-group z-depth-0">
-                                            <li class="list-group-item justify-content-between">
-                                                Cras justo odio
-                                                <span class="badge badge-primary badge-pill">14</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Dapibus ac facilisis in
-                                                <span class="badge badge-primary badge-pill">2</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Morbi leo risus
-                                                <span class="badge badge-primary badge-pill">1</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Cras justo odio
-                                                <span class="badge badge-primary badge-pill">14</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Dapibus ac facilisis in
-                                                <span class="badge badge-primary badge-pill">2</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Morbi leo risus
-                                                <span class="badge badge-primary badge-pill">1</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <!--Footer-->
-                                    <div class="modal-footer">
-                                        <a role="button" class="btn btn-success">Get it now
-                                            <i class="fa fa-diamond ml-1"></i>
-                                        </a>
-                                        <a role="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Central Modal Fluid Success-->
-
-                        <!-- Full Height Modal Right Success Demo-->
-                        <div class="modal fade right" id="fluidModalRightSuccessDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                             aria-hidden="true" data-backdrop="false">
-                            <div class="modal-dialog modal-full-height modal-right modal-notify modal-success" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <p class="heading lead">Modal Success</p>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true" class="white-text">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-                                        <div class="text-center">
-                                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla
-                                                aperiam blanditiis ad consequatur in dolores culpa, dignissimos, eius
-                                                non possimus fugiat. Esse ratione fuga, enim, ab officiis totam.
-                                            </p>
-                                        </div>
-                                        <ul class="list-group z-depth-0">
-                                            <li class="list-group-item justify-content-between">
-                                                Cras justo odio
-                                                <span class="badge badge-primary badge-pill">14</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Dapibus ac facilisis in
-                                                <span class="badge badge-primary badge-pill">2</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Morbi leo risus
-                                                <span class="badge badge-primary badge-pill">1</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Cras justo odio
-                                                <span class="badge badge-primary badge-pill">14</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Dapibus ac facilisis in
-                                                <span class="badge badge-primary badge-pill">2</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Morbi leo risus
-                                                <span class="badge badge-primary badge-pill">1</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <!--Footer-->
-                                    <div class="modal-footer justify-content-center">
-                                        <a role="button" class="btn btn-success">Get it now
-                                            <i class="fa fa-diamond ml-1"></i>
-                                        </a>
-                                        <a role="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Full Height Modal Right Success Demo-->
-
-                        <!-- Full Height Modal Left Info Demo-->
-                        <div class="modal fade left" id="fluidModalLeftInfoDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-                             data-backdrop="false">
-                            <div class="modal-dialog modal-full-height modal-left modal-notify modal-info" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <p class="heading lead">Modal Success</p>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true" class="white-text">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-                                        <div class="text-center">
-                                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla
-                                                aperiam blanditiis ad consequatur in dolores culpa, dignissimos, eius
-                                                non possimus fugiat. Esse ratione fuga, enim, ab officiis totam.
-                                            </p>
-                                        </div>
-                                        <ul class="list-group z-depth-0">
-                                            <li class="list-group-item justify-content-between">
-                                                Cras justo odio
-                                                <span class="badge badge-primary badge-pill">14</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Dapibus ac facilisis in
-                                                <span class="badge badge-primary badge-pill">2</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Morbi leo risus
-                                                <span class="badge badge-primary badge-pill">1</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Cras justo odio
-                                                <span class="badge badge-primary badge-pill">14</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Dapibus ac facilisis in
-                                                <span class="badge badge-primary badge-pill">2</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Morbi leo risus
-                                                <span class="badge badge-primary badge-pill">1</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <!--Footer-->
-                                    <div class="modal-footer justify-content-center">
-                                        <a role="button" class="btn btn-info">Get it now
-                                            <i class="fa fa-diamond ml-1"></i>
-                                        </a>
-                                        <a role="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">No, thanks</a>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Full Height Modal Right Info Demo-->
-
-                        <!-- Full Height Modal Top Warning Demo-->
-                        <div class="modal fade top" id="fluidModalTopWarningDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-                             data-backdrop="false">
-                            <div class="modal-dialog modal-full-height modal-top modal-notify modal-warning" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <p class="heading lead">Modal Warning</p>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true" class="white-text">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-                                        <div class="text-center">
-                                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                                        </div>
-                                        <ul class="list-group z-depth-0">
-                                            <li class="list-group-item justify-content-between">
-                                                Cras justo odio
-                                                <span class="badge badge-primary badge-pill">14</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Dapibus ac facilisis in
-                                                <span class="badge badge-primary badge-pill">2</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Morbi leo risus
-                                                <span class="badge badge-primary badge-pill">1</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <!--Footer-->
-                                    <div class="modal-footer">
-                                        <a role="button" class="btn btn-warning">Get it now
-                                            <i class="fa fa-diamond ml-1"></i>
-                                        </a>
-                                        <a role="button" class="btn btn-outline-warning waves-effect" data-dismiss="modal">No, thanks</a>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Full Height Modal Top Warning Demo-->
-
-                        <!-- Full Height Modal Bottom Danger Demo-->
-                        <div class="modal fade bottom" id="fluidModalBottomDangerDemo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                             aria-hidden="true" data-backdrop="false">
-                            <div class="modal-dialog modal-full-height modal-bottom modal-notify modal-danger" role="document">
-                                <!--Content-->
-                                <div class="modal-content">
-                                    <!--Header-->
-                                    <div class="modal-header">
-                                        <p class="heading lead">Modal Danger</p>
-
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true" class="white-text">&times;</span>
-                                        </button>
-                                    </div>
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-                                        <div class="text-center">
-                                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                                        </div>
-                                        <ul class="list-group z-depth-0">
-                                            <li class="list-group-item justify-content-between">
-                                                Cras justo odio
-                                                <span class="badge badge-primary badge-pill">14</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Dapibus ac facilisis in
-                                                <span class="badge badge-primary badge-pill">2</span>
-                                            </li>
-                                            <li class="list-group-item justify-content-between">
-                                                Morbi leo risus
-                                                <span class="badge badge-primary badge-pill">1</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <!--Footer-->
-                                    <div class="modal-footer">
-                                        <a role="button" class="btn btn-danger">Get it now
-                                            <i class="fa fa-diamond ml-1"></i>
-                                        </a>
-                                        <a role="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">No, thanks</a>
-                                    </div>
-                                </div>
-                                <!--/.Content-->
-                            </div>
-                        </div>
-                        <!-- Full Height Modal Bottom Danger Demo-->
-
-                    </section>
-                    <!--Section: Modals-->
-
-                    <!-- Card header -->
-                    <div class="card-header">Modals</div>
-
-                    <!--Card content-->
-                    <div class="card-body">
-
-                        <div class="text-center mb-5">
-                            <p class="lead">Click buttons below to launch modals demo</p>
-                        </div>
-
-                        <!-- First row-->
-                        <div class="row">
-
-                            <!--First column-->
-                            <div class="col-md-3">
-                                <h5 class="text-center mb-3">Frame Modal</h5>
-
-                                <img src="https://mdbootstrap.com/img/brandflow/modal4.jpg" alt="MDB graphics" class="img-fluid z-depth-1">
-                                <div class="text-center">
-                                    <h5 class="my-3">Position</h5>
-
-                                    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#frameModalTopInfoDemo" data-backdrop="false">Top</a>
-                                    <br>
-                                    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#frameModalBottomSuccessDemo" data-backdrop="false">Bottom</a>
-                                </div>
-                            </div>
-                            <!--First column-->
-
-                            <!--Second column-->
-                            <div class="col-md-3">
-                                <h5 class="text-center mb-3">Side Modal</h5>
-
-                                <img src="https://mdbootstrap.com/img/brandflow/modal3.jpg" alt="MDB graphics" class="img-fluid z-depth-1">
-                                <div class="text-center">
-                                    <h5 class="my-3">Position</h5>
-
-                                    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#sideModalTRSuccessDemo" data-backdrop="false">Top Right</a>
-                                    <br>
-                                    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#sideModalTLInfoDemo">Top Left</a>
-                                    <br>
-                                    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#sideModalBRDangerDemo">Bottom Right</a>
-                                    <br>
-                                    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#sideModalBLWarningDemo">Bottom Left</a>
-                                </div>
-                            </div>
-                            <!--Second column-->
-
-                            <!--Third column-->
-                            <div class="col-md-3">
-                                <h5 class="text-center mb-3">Central Modal</h5>
-
-                                <img src="https://mdbootstrap.com/img/brandflow/modal2.jpg" alt="MDB graphics" class="img-fluid z-depth-1">
-                                <div class="text-center">
-                                    <h5 class="my-3">Size</h5>
-
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalLoginAvatarDemo">Small </button>
-                                    <br>
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalLRFormDemo">Medium </button>
-                                    <br>
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#centralModalLGInfoDemo">Large </button>
-                                    <br>
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#centralModalFluidSuccessDemo">Fluid </button>
-                                </div>
-                            </div>
-                            <!--Third column-->
-
-                            <!--Fourth column-->
-                            <div class="col-md-3">
-                                <h5 class="text-center mb-3">Fluid Modal</h5>
-
-                                <img src="https://mdbootstrap.com/img/brandflow/modal1.jpg" alt="MDB graphics" class="img-fluid z-depth-1">
-                                <div class="text-center">
-                                    <h5 class="my-3">Position</h5>
-
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#fluidModalRightSuccessDemo">Right</button>
-                                    <br>
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#fluidModalLeftInfoDemo">Left</button>
-                                    <br>
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#fluidModalTopWarningDemo">Top</button>
-                                    <br>
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#fluidModalBottomDangerDemo">Bottom</button>
-                                </div>
-                            </div>
-                            <!--Fourth column-->
-
-                        </div>
-                        <!-- /.First row-->
-
-                    </div>
-
-                </div>
-                <!--/.Card-->
-
-            </div>
-            <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
     </div>
 </main>
 <!--Main layout-->
 
 <!--Footer-->
 <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
-
-    <!--&lt;!&ndash;Call to action&ndash;&gt;-->
-    <!--<div class="pt-4">-->
-    <!--<a class="btn btn-outline-white" href="https://mdbootstrap.com/getting-started/" target="_blank" role="button">Download MDB-->
-    <!--<i class="fa fa-download ml-2"></i>-->
-    <!--</a>-->
-    <!--<a class="btn btn-outline-white" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank" role="button">Start free tutorial-->
-    <!--<i class="fa fa-graduation-cap ml-2"></i>-->
-    <!--</a>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;/.Call to action&ndash;&gt;-->
-
-    <!--<hr class="my-4">-->
-
-    <!--&lt;!&ndash; Social icons &ndash;&gt;-->
-    <!--<div class="pb-4">-->
-    <!--<a href="https://www.facebook.com/mdbootstrap" target="_blank">-->
-    <!--<i class="fa fa-facebook mr-3"></i>-->
-    <!--</a>-->
-
-    <!--<a href="https://twitter.com/MDBootstrap" target="_blank">-->
-    <!--<i class="fa fa-twitter mr-3"></i>-->
-    <!--</a>-->
-
-    <!--<a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">-->
-    <!--<i class="fa fa-youtube mr-3"></i>-->
-    <!--</a>-->
-
-    <!--<a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">-->
-    <!--<i class="fa fa-google-plus mr-3"></i>-->
-    <!--</a>-->
-
-    <!--<a href="https://dribbble.com/mdbootstrap" target="_blank">-->
-    <!--<i class="fa fa-dribbble mr-3"></i>-->
-    <!--</a>-->
-
-    <!--<a href="https://pinterest.com/mdbootstrap" target="_blank">-->
-    <!--<i class="fa fa-pinterest mr-3"></i>-->
-    <!--</a>-->
-
-    <!--<a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">-->
-    <!--<i class="fa fa-github mr-3"></i>-->
-    <!--</a>-->
-
-    <!--<a href="http://codepen.io/mdbootstrap/" target="_blank">-->
-    <!--<i class="fa fa-codepen mr-3"></i>-->
-    <!--</a>-->
-    <!--</div>-->
-    <!--&lt;!&ndash; Social icons &ndash;&gt;-->
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
@@ -1354,183 +332,6 @@
 <script type="text/javascript">
     // Animations initialization
     new WOW().init();
-</script>
-
-<!-- Charts -->
-<script>
-
-    // Line
-    var ctx = document.getElementById("myChart").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: 'Top 40 words used in playlist names',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-
-    //pie
-    var ctxP = document.getElementById("pieChart").getContext('2d');
-    var myPieChart = new Chart(ctxP, {
-        type: 'pie',
-        data: {
-            datasets: [
-                {
-                    data: [300, 50, 100, 40, 120],
-                    backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-                    hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
-                }
-            ]
-        },
-        options: {
-            responsive: true
-        }
-    });
-
-
-    //line
-    var ctxL = document.getElementById("lineChart").getContext('2d');
-    var myLineChart = new Chart(ctxL, {
-        type: 'line',
-        data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: "rgba(220,220,220,0.2)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 80, 81, 56, 55, 40]
-                },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(151,187,205,0.2)",
-                    strokeColor: "rgba(151,187,205,1)",
-                    pointColor: "rgba(151,187,205,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                }
-            ]
-        },
-        options: {
-            responsive: true
-        }
-    });
-
-
-    //radar
-    var ctxR = document.getElementById("radarChart").getContext('2d');
-    var myRadarChart = new Chart(ctxR, {
-        type: 'radar',
-        data: {
-            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: "rgba(220,220,220,0.2)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 90, 81, 56, 55, 40]
-                },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(151,187,205,0.2)",
-                    strokeColor: "rgba(151,187,205,1)",
-                    pointColor: "rgba(151,187,205,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [28, 48, 40, 19, 96, 27, 100]
-                }
-            ]
-        },
-        options: {
-            responsive: true
-        }
-    });
-
-    //doughnut
-    var ctxD = document.getElementById("doughnutChart").getContext('2d');
-    var myLineChart = new Chart(ctxD, {
-        type: 'doughnut',
-        data: {
-            labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
-            datasets: [
-                {
-                    data: [300, 50, 100, 40, 120],
-                    backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-                    hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
-                }
-            ]
-        },
-        options: {
-            responsive: true
-        }
-    });
-
-</script>
-
-<!--Google Maps-->
-<script src="https://maps.google.com/maps/api/js"></script>
-<script>
-    // Regular map
-    function regular_map() {
-        var var_location = new google.maps.LatLng(40.725118, -73.997699);
-
-        var var_mapoptions = {
-            center: var_location,
-            zoom: 14
-        };
-
-        var var_map = new google.maps.Map(document.getElementById("map-container"),
-            var_mapoptions);
-
-        var var_marker = new google.maps.Marker({
-            position: var_location,
-            map: var_map,
-            title: "New York"
-        });
-    }
-
-    // Initialize maps
-    google.maps.event.addDomListener(window, 'load', regular_map);
 </script>
 
 </body>
